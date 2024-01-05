@@ -39,7 +39,7 @@ public class SendEmailController {
     }
 
     @GetMapping("/hello")
-    @PreAuthorize("hasAnyAuthority('ADMIN')")
+    @PreAuthorize("hasAnyAuthority('Admin')")
     public String firstPage() {
         return "Hello World";
     }

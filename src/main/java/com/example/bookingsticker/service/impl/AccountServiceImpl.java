@@ -26,6 +26,6 @@ public class AccountServiceImpl implements AccountService {
         Account account = accountRepository.findByUsername(username);
         if (Objects.isNull(account))
             throw CustomException.NOT_FOUND.withMessage("").addError("");
-        return new User(username, account.getPassword(), AuthorityUtils.createAuthorityList(account.getRole().getText()));
+        return new AccountDetail(account);
     }
 }
